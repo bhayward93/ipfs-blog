@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Ben Hayward</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="The personal website of Ben Hayward, showcasing my programming projects in a variety of languages.">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Let the browser know that the website is optimized for mobile-->
+
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Latest compiled CSS-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./public/css/core.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/navbar.css">
+
+    <!-- jQuery library-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript-->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+
+  </head>
+
+  <body>
+    <!-- Nav bar-->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">BenHayward.net</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" 
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto"></ul>
+          <ul class="navbar-nav">
+            <li class="nav-item"><button type="button" class="btn btn-outline-secondary" href="#aboutMe" target="#aboutMe">ABOUT ME</button></li>
+            <li class="nav-item"><button type="button" class="btn btn-outline-secondary" href="https://github.com/bhayward93">PORTFOLIO</button></li>
+            <li class="nav-item"><button type="button" class="btn btn-outline-secondary" href="#" target="#aboutMe">BLOG</button></li>
+            <li class="nav-item"><button type="button" class="btn btn-outline-secondary" href="https://www.linkedin.com/in/ben-hayward" >CONTANT</button></li>
+
+
+          </ul>
+        </div>                
+      </div>
+    </nav>
+    <div class="container-fluid home" id="particles-js">
+
+    </div>
+
+      <div class="row">
+
+        <div class="container-fluid bottom-center">
+
+          <div class="col-12">
+
+            <p><a href="#aboutMe"><span class="fa fa-chevron-down chevron-wide"></span></a></p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid about-me" id="aboutMe">
+
+      <div class="container-fluid parallax">
+
+        <div class="row">
+
+          <div class="col-lg-12">
+
+            <div class="card align-center">
+
+              <div class="card-body">
+
+                <h1 class="card-title">Blog</h1>
+
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+
+                <p class="card-text"></p>
+
+                <p>This website is currently in development. In future I will be adding a personal blog, a 'real' portfolio section and more.</p>
+
+                <p>
+
+                  I have a passion for Blockchain and Web technologies, and work actively on various large scale projects spanning from banks to ICOs. 
+
+                  I am a firm believer in the future of cryptocurrencies and am a firm supporter of the FOSS movement. My skillset includes developing using:
+
+                  <ul>
+
+                    <li>Javascript - Primarily in NodeJS/Express/JQuery</li>
+
+                    <li>Web3/Solidity Smart Contract development.</li>
+
+                    <li>HyperLedger Fabric, Composer, Cello and other DLTs/Tools</li>
+
+                    <li>Other decentralized NOSQL solutions, such as GunDB and Orbit. </li>
+
+                    <li>Dev-Ops - Deployment and remote management via Apache2/AWS/Azure etc</li>
+
+                    <li>Linux advocate (Manjaro!), Windows competant.</li>
+
+                    <li>Penetration Testing (Hobbyist)</li>
+
+                    <li>Web and Decentralised Architecture</li>
+
+                    <li>HTML5/CSS3/Bootstrap4/Pug/Jade etc</li>
+
+                  </ul>
+
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+
+
+<script src="./public/js/particles.js-master/particles.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function(){
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+              });
+          });
+        });
+      particlesJS.load('particles-js', './public/js/particlesjs-config.json', function() {
+        console.log('callback - particles.js config loaded');
+      });
+        $("#scrollbtn").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 1300, function(){
+              window.location.hash = hash;
+            });
+          }
+	  });
+      });
+  </script>
+</html>
