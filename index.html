@@ -67,7 +67,7 @@
 
     </div>
 
-      <div class="row">
+<!--       <div class="row">
 
         <div class="container-fluid bottom-center">
 
@@ -79,8 +79,8 @@
 
         </div>
       </div>
-    </div>
-    <div class="container-fluid about-me" id="aboutMe">
+    </div> -->
+    <div class="container-fluid blog-container" id="blog-container">
 
       <div class="container-fluid parallax">
 
@@ -90,45 +90,9 @@
 
             <div class="card align-center">
 
-              <div class="card-body">
+              <div class="card-body blog" id="blog">
 
-                <h1 class="card-title">Blog</h1>
-
-                <h6 class="card-subtitle mb-2 text-muted"></h6>
-
-                <p class="card-text"></p>
-
-                <p>This website is currently in development. In future I will be adding a personal blog, a 'real' portfolio section and more.</p>
-
-                <p>
-
-                  I have a passion for Blockchain and Web technologies, and work actively on various large scale projects spanning from banks to ICOs. 
-
-                  I am a firm believer in the future of cryptocurrencies and am a firm supporter of the FOSS movement. My skillset includes developing using:
-
-                  <ul>
-
-                    <li>Javascript - Primarily in NodeJS/Express/JQuery</li>
-
-                    <li>Web3/Solidity Smart Contract development.</li>
-
-                    <li>HyperLedger Fabric, Composer, Cello and other DLTs/Tools</li>
-
-                    <li>Other decentralized NOSQL solutions, such as GunDB and Orbit. </li>
-
-                    <li>Dev-Ops - Deployment and remote management via Apache2/AWS/Azure etc</li>
-
-                    <li>Linux advocate (Manjaro!), Windows competant.</li>
-
-                    <li>Penetration Testing (Hobbyist)</li>
-
-                    <li>Web and Decentralised Architecture</li>
-
-                    <li>HTML5/CSS3/Bootstrap4/Pug/Jade etc</li>
-
-                  </ul>
-
-                </p>
+          
 
               </div>
 
@@ -156,20 +120,25 @@
               });
           });
         });
-      particlesJS.load('particles-js', './public/js/particlesjs-config.json', function() {
-        console.log('callback - particles.js config loaded');
-      });
-        $("#scrollbtn").on('click', function(event) {
-          if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 1300, function(){
-              window.location.hash = hash;
-            });
-          }
-	  });
-      });
+        particlesJS.load('particles-js', './public/js/particlesjs-config.json', function() {
+          console.log('callback - particles.js config loaded');
+        });
+   //    $("#scrollbtn").on('click', function(event) {
+   //      if (this.hash !== "") {
+   //        event.preventDefault();
+   //        var hash = this.hash;
+   //        $('html, body').animate({
+   //          scrollTop: $(hash).offset().top
+   //        }, 1300, function(){
+   //          window.location.hash = hash;
+   //        });
+   //      }
+	  // });
+      $.getJSON("./posts.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+
+      $('.blog').append(`<div>${json.title} ${json.timestamp} ${json.imagePath} ${json.body} ${json.tags}</div>`);   
+    });
+  });
   </script>
 </html>
